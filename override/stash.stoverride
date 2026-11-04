@@ -34,7 +34,7 @@ dns:
     "geosite:gfw,category-ai-!cn,category-cdn-!cn":
       - https://dns.google/dns-query#h3=true
       - https://cloudflare-dns.com/dns-query#h3=true
-    "+.game-gakuen-idolmaster.jp":
+    "ruleset:Gakumas":
       - https://dns.google/dns-query#h3=true
       - https://cloudflare-dns.com/dns-query#h3=true
   fake-ip-filter: #!replace
@@ -699,6 +699,20 @@ rule-providers: #!replace
     path: ./Rule/AppleAI.list
     url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-intelligence.list
     interval: 7200
+  Gakumas:
+    type: http
+    behavior: domain
+    format: text
+    path: ./Rule/Gakumas.list
+    url: https://cdn.jsdelivr.net/gh/StarWishsama/norain-rules@main/rules/gakumas.list
+    interval: 72000
+  FraudTracker:
+    type: http
+    behavior: domain
+    format: text
+    path: ./Rule/AntiFraudTracker.list
+    url: https://cdn.jsdelivr.net/gh/StarWishsama/norain-rules@main/rules/tracker.list
+    interval: 72000
          
 rules: #!replace
   - DOMAIN,dns.alidns.com,DIRECT
@@ -711,6 +725,7 @@ rules: #!replace
   - DOMAIN,cloudflare-dns.com,Proxy
 
   - RULE-SET,HTTPDNS,HTTPDNS,no-track
+  - RULE-SET,FraudTracker,AntiAD
   - RULE-SET,AntiAD,AntiAD
 
   - GEOIP,private,DIRECT,no-resolve
@@ -736,7 +751,7 @@ rules: #!replace
   - GEOSITE,microsoft,Microsoft
 
   - RULE-SET,dmm,DMM
-  - DOMAIN-SUFFIX,game-gakuen-idolmaster.jp,Gakumas
+  - RULE-SET,Gakumas,Gakumas
 
   - RULE-SET,Netflix,Netflix
   - GEOSITE,speedtest,Speedtest
