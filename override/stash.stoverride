@@ -1,0 +1,754 @@
+---
+name: Stash Override
+desc: Stash 通用 Mixin 配置 @NoRainCity
+author: StarWishsama (NoRainCity)
+category: Mixin
+
+dns:
+  follow-rule: true
+  default-nameserver: #!replace
+    - 119.29.29.29
+    - 223.5.5.5
+  proxy-server-nameserver: #!replace
+    - 119.29.29.29
+    - 223.5.5.5
+    - 8.8.4.4
+  nameserver: #!replace
+    - https://doh.pub/dns-query#h3=true
+    - tls://dns.alidns.com#h3=true
+  nameserver-policy: #!replace
+    dns.alidns.com: 223.5.5.5
+    dot.pub: 119.29.29.29
+    doh.pub: 119.29.29.29
+    dns.pub: 119.29.29.29
+    doh.360.cn: 101.198.198.198
+    cloudflare-dns.com: 1.1.1.1
+    dns.google: 8.8.8.8
+    "+.lan": system
+    "+.in-addr.arpa": system
+    "cable.auth.com": system
+    miwifi.net: system
+    "geosite:apple@cn,apple-music@cn": 
+      - 223.5.5.5
+      - https://doh.pub/dns-query#h3=true
+    "geosite:gfw,category-ai-!cn,category-cdn-!cn":
+      - https://dns.google/dns-query#h3=true
+      - https://cloudflare-dns.com/dns-query#h3=true
+    "+.game-gakuen-idolmaster.jp":
+      - https://dns.google/dns-query#h3=true
+      - https://cloudflare-dns.com/dns-query#h3=true
+  fake-ip-filter: #!replace
+    - time.apple.com
+    - time-ios.apple.com
+    - time-macos.apple.com
+    - time.asia.apple.com
+    - time.euro.apple.com
+    - time.aws.com
+    - time.cloudflare.com
+    - time.facebook.com
+    - time1.facebook.com
+    - time2.facebook.com
+    - time3.facebook.com
+    - time4.facebook.com
+    - time5.facebook.com
+    - time.google.com
+    - time1.google.com
+    - time2.google.com
+    - time3.google.com
+    - time4.google.com
+    - ntp.ubuntu.com
+    - time.windows.com
+    - ut1-wwv.nist.gov
+    - ntp-b.nist.gov
+    - ntp-d.nist.gov
+    - ntp-wwv.nist.gov
+    - time.nist.gov
+    - time-a-g.nist.gov
+    - time-b-g.nist.gov
+    - time-c-g.nist.gov
+    - time-d-g.nist.gov
+    - time-e-g.nist.gov
+    - time-a-b.nist.gov
+    - time-b-b.nist.gov
+    - time-c-b.nist.gov
+    - time-d-b.nist.gov
+    - time-e-b.nist.gov
+    - time-a-wwv.nist.gov
+    - time-b-wwv.nist.gov
+    - time-c-wwv.nist.gov
+    - time-d-wwv.nist.gov
+    - time-e-wwv.nist.gov
+    - ntp-c.colorado.edu
+    - ut1-time.colorado.edu
+    - utcnist.colorado.edu
+    - utcnist2.colorado.edu
+    - utcnist3.colorado.edu
+    - ntp0.ntp-servers.net
+    - ntp1.ntp-servers.net
+    - ntp2.ntp-servers.net
+    - ntp3.ntp-servers.net
+    - ntp4.ntp-servers.net
+    - ntp5.ntp-servers.net
+    - ntp6.ntp-servers.net
+    - ntp7.ntp-servers.net
+    - ntp.time.nl
+    - ntp1.time.nl
+    - ntp2.time.nl
+    - ntppool1.time.nl
+    - ntppool2.time.nl
+    - +.ntp.se
+    - +.clock.isc.org
+    - +.ntp.fiord.ru
+    - +.ntp.nat.ms
+    - +.ntp.nic.cz
+    - +.ntp.ripe.net
+    - +.ntp.ufe.cz
+    - +.pool.ntp.org
+    - +.time.nrc.ca
+    - ntp.aliyun.com
+    - ntp1.aliyun.com
+    - ntp2.aliyun.com
+    - ntp3.aliyun.com
+    - ntp4.aliyun.com
+    - ntp5.aliyun.com
+    - ntp6.aliyun.com
+    - ntp7.aliyun.com
+    - time.amazonaws.cn
+    - time.izatcloud.net
+    - time.xtracloud.net
+    - izattime.qcomgeo2.com
+    - xtratime.qcomgeo2.com
+    - ntp.tencent.com
+    - ntp1.tencent.com
+    - ntp2.tencent.com
+    - ntp3.tencent.com
+    - ntp4.tencent.com
+    - ntp5.tencent.com
+    - +.cn.pool.ntp.org
+    - +.ntp.neu.edu.cn
+    - +.ntp.ntsc.ac.cn
+    - +.ntp.org.cn
+    - ping.archlinux.org
+    - redirect.archlinux.org
+    - connectivitycheck.platform.hihonorcloud.com
+    - connectivitycheck.platform.hicloud.com
+    - connect.rom.miui.com
+    - connectivity-check.ubuntu.com
+    - +.msftconnecttest.com
+    - +.msftncsi.com
+    - +.captive.apple.com
+    - +.cp.cloudflare.com
+    - +.network-test.debian.org
+    - +.detectportal.firefox.com
+    - +.connectivitycheck.gstatic.com
+    - +.networkcheck.kde.org
+    - +.ipv6check-http.steamserver.net
+    - +.ipv6check-udp.steamserver.net
+    - +.test.steampowered.com
+    - instant.arubanetworks.com
+    - setmeup.arubanetworks.com
+    - asusrouter.com
+    - router.asus.com
+    - www.asusrouter.com
+    - oasisauth.h3c.com
+    - routerlogin.com
+    - www.routerlogin.com
+    - tplogin.cn
+    - miwifi.com
+    - www.miwifi.com
+    - local.adguard.org
+    - +.internal
+    - +.localdomain
+    - +.example
+    - +.invalid
+    - +.localhost
+    - +.test
+    - +.local
+    - +.lan
+    - +.router.ctc
+    - +.my.router
+    - +.home.arpa
+    - +.zte.home
+    - +.tplinkwifi.net
+    - +.tendawifi.com
+    - +.plex.direct
+    - +.hiwifi.com
+    - +.phicomm.me
+    - +.peiluyou.com
+    - +.ts.net
+    - +.leike.cc
+    - "*.qianjunakasumi.moe"
+    - time1.cloud.tencent.com
+    - localhost.ptlogin2.qq.com
+    - localhost.sec.qq.com
+    - +.srv.nintendo.net
+    - +.stun.playstation.net
+    - xbox.*.microsoft.com
+    - xnotify.xboxlive.com
+    - +.ipv6.microsoft.com
+    - +.battlenet.com.cn
+    - +.wotgame.cn
+    - +.wggames.cn
+    - +.wowsgame.cn
+    - +.wargaming.net
+    - proxy.golang.org
+    - stun.*.*
+    - stun.*.*.*
+    - +.stun.*.*
+    - +.stun.*.*.*
+    - +.stun.*.*.*.*
+    - +.pvp.net
+    - heartbeat.belkin.com
+    - "*.linksys.com"
+    - "*.linksyssmartwifi.com"
+    - "*.router.asus.com"
+    - mesu.apple.com
+    - swscan.apple.com
+    - swquery.apple.com
+    - swdownload.apple.com
+    - swcdn.apple.com
+    - swdist.apple.com
+    - lens.l.google.com
+    - stun.l.google.com
+    - +.nflxvideo.net
+    - "*.mcdn.bilivideo.cn"
+    - +.media.dssott.com
+    - +.uu.163.com
+    - ps.res.netease.com
+    - +.sandai.net
+    - +.n0808.com
+    - +.3gppnetwork.org
+    - +.prod.s3.amazonaws.com
+    - +.ubi.com
+    - +.ubisoft.com
+    - +.vivox.com
+    - +.azureedge.net
+    - +.sslip.io
+    # Google Voice
+    - '+.vlinkcloud.cn'
+    # 中国电信免密登录
+    - '+.id6.me'
+    - '+.189.cn'
+    # Apple WebAuth(Passkey)
+    - 'cable.auth.com'
+    - 'app-site-association.cdn-apple.com'
+    - 'app-site-association.networking.apple'
+    # 银行
+    - 'login-service.mobile-bank.psbc.com'
+    - 'mobile-bank.psbc.com'
+    - '+.icbc.com.cn'
+    - '+.boc.cn'
+    - +.8008205555.cn
+    - +.8008205555.com
+    - +.cignacmb-ipmi.com
+    - +.cignacmb.com
+    - +.cignacmbamc.com
+    - +.cmb-leasing.com
+    - +.cmbchina.biz
+    - +.cmbchina.cn
+    - +.cmbchina.com
+    - +.cmbimg.cn
+    - +.cmbimg.com
+    - +.cmbt.cn
+    - +.cmbuat.com
+    - +.cmburl.cn
+    - +.cmf.biz
+    - +.cmf.ltd
+    - +.cmfchina.com
+    - +.cmfunds.cn
+    - +.test-cignacmb.com
+    - +.joying.com
+    - +.hsbc.com.hk
+    - +.hsbc.com
+proxy-groups: #!replace
+  - name: Proxy
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png
+    
+    proxies:
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+
+  - name: Manual
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Static.png
+    include-all: true
+
+  - name: US
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/US.png
+    filter: (🇺🇸|US|USA|America|america|United States|美国|凤凰城|洛杉矶|西雅图|芝加哥|纽约|沪美|美)
+    include-all: true
+
+  - name: SG
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/SG.png
+    filter: (新加坡|SG|Singapore|狮城|SGN)
+    include-all: true
+
+  - name: HK
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/HK.png
+    filter: (🇭🇰|HK|Hong|hong|香港|深港|沪港|京港|港)
+    include-all: true
+
+  - name: TW
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/TW.png
+    filter: (🇹🇼|TW|TWN|Taiwan|Taipei|taiwan|台湾|台灣|台北|台中|新北|彰化)
+    include-all: true
+
+  - name: JP
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/JP.png
+    filter: (🇯🇵|JP|Japan|japan|Tokyo|tokyo|日本|东京|大阪)
+    include-all: true
+
+  - name: HTTPDNS
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Server.png
+
+    proxies:
+      - Proxy
+      - DIRECT
+      - REJECT
+      - REJECT-DROP 
+
+  - name: AntiAD
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Advertising.png
+
+    proxies:
+      - REJECT
+      - Proxy
+      - DIRECT
+      - REJECT-DROP
+
+  - name: HK Bank
+    type: select    
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/HK.png
+    proxies:
+      - DIRECT
+      - Proxy
+      - Manual
+      - HK
+      
+  - name: Mainland
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/China.png
+
+    proxies:
+      - DIRECT
+      - Proxy
+
+  - name: Bilibili
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png
+
+    proxies:
+      - DIRECT
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+  - name: Speedtest
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Speedtest.png
+
+    proxies:
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+      - DIRECT
+
+  - name: APNS
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png
+
+    proxies:
+      - DIRECT
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+
+  - name: Apple
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png
+
+    proxies:
+      - DIRECT
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+  - name: AppleCN
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png
+
+    proxies:
+      - DIRECT
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+  - name: Microsoft
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png
+
+    proxies:
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+      - DIRECT
+  - name: AI
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/AI.png
+
+    proxies:
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+      - DIRECT
+  - name: AppleAI
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/AI.png
+
+    proxies:
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+      - DIRECT     
+  - name: Paypal
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/PayPal.png
+
+    proxies:
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+      - DIRECT
+  - name: GitHub
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/GitHub.png
+
+    proxies:
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+      - DIRECT
+  - name: Google
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google.png
+
+    proxies:
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+      - DIRECT
+  - name: YouTube
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png
+
+    proxies:
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+      - DIRECT
+  - name: Netflix
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png
+
+    proxies:
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+      - DIRECT
+  - name: Steam
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Steam.png
+
+    proxies:
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+      - DIRECT
+  - name: Spotify
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png
+
+    proxies:
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+      - DIRECT
+  - name: Telegram
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
+
+    proxies:
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+      - DIRECT
+  - name: Twitter
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Twitter.png
+
+    proxies:
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+      - DIRECT
+  - name: DMM
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Game.png
+
+    proxies:
+      - Proxy
+      - Manual
+      - JP
+      - DIRECT
+  - name: Gakumas
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Game.png
+
+    proxies:
+      - Proxy
+      - Manual
+      - JP
+      - DIRECT
+  - name: Steam@CN
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Steam.png
+    proxies:
+      - DIRECT
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+  - name: Fallback
+    type: select
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png
+    proxies:
+      - Proxy
+      - Manual
+      - US
+      - SG
+      - HK
+      - TW
+      - JP
+      - DIRECT
+rule-providers: #!replace
+  GitHub:
+    type: http
+    behavior: domain
+    format: text
+    path: ./Rule/GitHub.list
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.list
+    interval: 3600
+  Google:
+    type: http
+    behavior: domain
+    format: text
+    path: ./Rule/Google.list
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.list
+    interval: 3600
+  Netflix:
+    type: http
+    behavior: domain
+    format: text
+    path: ./Rule/Netflix.list
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/netflix.list
+    interval: 3600
+  AI:
+    type: http
+    behavior: domain
+    path: ./Rule/AI.list
+    url: https://cdn.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/stash/domain/ai.list
+    format: text
+    interval: 3600
+  apple:
+    type: http
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple.list
+    behavior: domain
+    format: text
+    interval: 7200   
+  apple-cn:
+    type: http
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple@cn.list
+    behavior: domain
+    format: text
+    interval: 7200
+  steam@cn:
+    type: http
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam%40cn.list
+    behavior: domain
+    format: text
+    interval: 7200 
+  dmm:
+    type: http
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/dmm.list
+    behavior: domain
+    format: text
+    interval: 7200
+  HTTPDNS:
+    type: http
+    url: https://cdn.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/stash/httpdns.list
+    behavior: domain
+    format: text
+    interval: 7200
+  AntiAD:
+    type: http
+    url: https://gcore.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-Clash-Only.Ads.yaml
+    behavior: domain
+    format: yaml
+    interval: 7200
+  CN:
+    type: http
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.list
+    behavior: domain
+    format: text
+    interval: 7200  
+  HKBANK:
+    type: http
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/BankHK_Domain.yaml
+    behavior: domain
+    format: yaml
+    interval: 72000
+  ASNCN:
+    type: http
+    url: https://cdn.jsdelivr.net/gh/missuo/ASN-China@main/ASN.China.list
+    behavior: classical
+    format: text
+    interval: 72000
+  AppleAI:
+    type: http
+    behavior: domain
+    format: text
+    path: ./Rule/AppleAI.list
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-intelligence.list
+    interval: 7200
+         
+rules: #!replace
+  - DOMAIN,dns.alidns.com,DIRECT
+  - DOMAIN,doh.pub,DIRECT
+  - DOMAIN,ua-check.stagoh.com,DIRECT
+  - DOMAIN,stun.chat.bilibili.com,REJECT,no-track
+
+  # 强制海外 DNS 走代理
+  - DOMAIN,dns.google,Proxy
+  - DOMAIN,cloudflare-dns.com,Proxy
+
+  - RULE-SET,HTTPDNS,HTTPDNS,no-track
+  - RULE-SET,AntiAD,AntiAD
+
+  - GEOIP,private,DIRECT,no-resolve
+
+  # Apple Intelligence
+  - RULE-SET,AppleAI,AppleAI
+
+  - GEOSITE,category-ai-!cn,AI
+  - RULE-SET,AI,AI
+
+  - RULE-SET,apple-cn,AppleCN
+  - RULE-SET,steam@cn,Steam@CN
+
+  # Bilibili 使用独立策略组，优先于国内服务兜底
+  - GEOSITE,bilibili,Bilibili
+
+  # YouTube 与 Google 规则集有重叠，必须先匹配
+  - GEOSITE,youtube,YouTube
+  - RULE-SET,Google,Google
+  - RULE-SET,GitHub,GitHub
+  - RULE-SET,apple,Apple
+  - RULE-SET,HKBANK,HK Bank
+  - GEOSITE,microsoft,Microsoft
+
+  - RULE-SET,dmm,DMM
+  - DOMAIN-SUFFIX,game-gakuen-idolmaster.jp,Gakumas
+
+  - RULE-SET,Netflix,Netflix
+  - GEOSITE,speedtest,Speedtest
+  - GEOSITE,steam,Steam
+  - GEOSITE,spotify,Spotify
+  - GEOSITE,telegram,Telegram
+  - GEOSITE,x,Twitter
+  - GEOSITE,paypal,Paypal
+
+  - RULE-SET,ASNCN,Mainland,no-resolve
+  - RULE-SET,CN,Mainland
+  - GEOIP,cn,Mainland
+
+  - MATCH,Fallback
