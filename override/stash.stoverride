@@ -177,7 +177,6 @@ dns:
     - +.peiluyou.com
     - +.ts.net
     - +.leike.cc
-    - "*.qianjunakasumi.moe"
     - time1.cloud.tencent.com
     - localhost.ptlogin2.qq.com
     - localhost.sec.qq.com
@@ -579,7 +578,7 @@ proxy-groups: #!replace
       - DIRECT
   - name: Gakumas
     type: select
-    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Game.png
+    icon: https://cdn.jsdelivr.net/gh/StarWishsama/norain-rules@main/resources/icon/gakumas.jpg
 
     proxies:
       - Proxy
