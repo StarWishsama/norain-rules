@@ -28,10 +28,7 @@ dns:
     "+.in-addr.arpa": system
     "cable.auth.com": system
     miwifi.net: system
-    "geosite:apple@cn,apple-music@cn": 
-      - 223.5.5.5
-      - https://doh.pub/dns-query#h3=true
-    "geosite:gfw,category-ai-!cn,category-cdn-!cn":
+    "geosite:gfw,category-ai-!cn,category-cdn-!cn,apple":
       - https://dns.google/dns-query#h3=true
       - https://cloudflare-dns.com/dns-query#h3=true
     "ruleset:Gakumas":
