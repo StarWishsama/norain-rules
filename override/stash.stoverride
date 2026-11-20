@@ -14,8 +14,8 @@ dns:
     - 223.5.5.5
     - 8.8.4.4
   nameserver: #!replace
-    - https://doh.pub/dns-query#h3=true
-    - tls://dns.alidns.com#h3=true
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
   nameserver-policy: #!replace
     dns.alidns.com: 223.5.5.5
     dot.pub: 119.29.29.29
@@ -29,11 +29,11 @@ dns:
     "cable.auth.com": system
     miwifi.net: system
     "geosite:gfw,category-ai-!cn,category-cdn-!cn,apple":
-      - https://dns.google/dns-query#h3=true
-      - https://cloudflare-dns.com/dns-query#h3=true
+      - https://dns.google/dns-query
+      - https://cloudflare-dns.com/dns-query
     "ruleset:Gakumas":
-      - https://dns.google/dns-query#h3=true
-      - https://cloudflare-dns.com/dns-query#h3=true
+      - https://dns.google/dns-query
+      - https://cloudflare-dns.com/dns-query
   fake-ip-filter: #!replace
     - time.apple.com
     - time-ios.apple.com
