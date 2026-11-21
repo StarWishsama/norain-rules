@@ -751,6 +751,7 @@ rules: #!replace
   - RULE-SET,GitHub,GitHub
   - RULE-SET,apple,Apple
   - RULE-SET,HKBANK,HK Bank
+  - DOMAIN,c-hsbc.lytics.io,HK Bank
   - GEOSITE,microsoft,Microsoft
 
   - RULE-SET,dmm,DMM
