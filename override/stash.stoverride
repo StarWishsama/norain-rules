@@ -4,6 +4,8 @@ desc: Stash 通用 Mixin 配置 @NoRainCity
 author: StarWishsama (NoRainCity)
 category: Mixin
 
+ipv6: false
+
 dns:
   follow-rule: true
   default-nameserver: #!replace
@@ -12,10 +14,10 @@ dns:
   proxy-server-nameserver: #!replace
     - 119.29.29.29
     - 223.5.5.5
-    - 8.8.4.4
   nameserver: #!replace
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
+    - 114.114.114.114
   nameserver-policy: #!replace
     dns.alidns.com: 223.5.5.5
     dot.pub: 119.29.29.29
@@ -32,6 +34,9 @@ dns:
       - https://dns.google/dns-query
       - https://cloudflare-dns.com/dns-query
     "ruleset:Gakumas":
+      - https://dns.google/dns-query
+      - https://cloudflare-dns.com/dns-query
+    "ruleset:HKBANK":
       - https://dns.google/dns-query
       - https://cloudflare-dns.com/dns-query
   fake-ip-filter: #!replace
@@ -714,12 +719,13 @@ rule-providers: #!replace
 rules: #!replace
   - DOMAIN,dns.alidns.com,DIRECT
   - DOMAIN,doh.pub,DIRECT
-  - DOMAIN,ua-check.stagoh.com,DIRECT
-  - DOMAIN,stun.chat.bilibili.com,REJECT,no-track
 
   # 强制海外 DNS 走代理
   - DOMAIN,dns.google,Proxy
   - DOMAIN,cloudflare-dns.com,Proxy
+
+  - DOMAIN,ua-check.stagoh.com,DIRECT
+  - DOMAIN,stun.chat.bilibili.com,REJECT,no-track
 
   - RULE-SET,HTTPDNS,HTTPDNS,no-track
   - RULE-SET,FraudTracker,AntiAD
