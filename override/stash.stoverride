@@ -15,9 +15,8 @@ dns:
     - 119.29.29.29
     - 223.5.5.5
   nameserver: #!replace
-    - system
-    - 223.5.5.5
-    - 119.29.29.29
+    - https://dns.alidns.com/dns-query
+    - tls://dot.pub
   nameserver-policy: #!replace
     dns.alidns.com: 223.5.5.5
     dot.pub: 119.29.29.29
@@ -717,9 +716,11 @@ rule-providers: #!replace
     interval: 72000
          
 rules: #!replace
+  # 由于 Stash 不支持按 DNS 服务器指定出口，只能 follow rule
+  - IP-CIDR,119.29.29.29/32,DIRECT,no-resolve
+  - IP-CIDR,223.5.5.5/32,DIRECT,no-resolve
   - DOMAIN,dns.alidns.com,DIRECT
   - DOMAIN,doh.pub,DIRECT
-
   # 强制海外 DNS 走代理
   - DOMAIN,dns.google,Proxy
   - DOMAIN,cloudflare-dns.com,Proxy
