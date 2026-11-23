@@ -32,10 +32,10 @@ dns:
     "geosite:gfw,category-ai-!cn,category-cdn-!cn,apple":
       - https://dns.google/dns-query
       - https://cloudflare-dns.com/dns-query
-    "ruleset:Gakumas":
+    "rule-set:Gakumas":
       - https://dns.google/dns-query
       - https://cloudflare-dns.com/dns-query
-    "ruleset:HKBANK":
+    "rule-set:HKBANK":
       - https://dns.google/dns-query
       - https://cloudflare-dns.com/dns-query
   fake-ip-filter: #!replace
